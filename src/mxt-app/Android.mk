@@ -4,7 +4,6 @@ include $(CLEAR_VARS)
 LOCAL_C_INCLUDES := $(MXTAPP_TOP_DIR)/src
 LOCAL_CFLAGS += -DMXT_VERSION=\"$(GIT_VERSION)\"
 LOCAL_SRC_FILES := \
-  mxt_app.c \
   broken_line.c \
   sensor_variant.c \
   polyfit.c \
@@ -30,4 +29,4 @@ ifneq ($(MXTAPP_NO_USB_SUPPORT),true)
     LOCAL_STATIC_LIBRARIES += libusbdroid
 endif
 
-include $(BUILD_EXECUTABLE)
+include $(BUILD_STATIC_LIBRARY)
